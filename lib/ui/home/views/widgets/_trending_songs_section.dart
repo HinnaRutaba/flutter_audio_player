@@ -16,11 +16,17 @@ class _TrendingSongsSection extends StatelessWidget {
       gridItems: trendingSongs.map(
         (song) {
           return ListTile(
-            leading: Image.network(
-              song.imageUrl,
+            leading: Container(
               height: 48,
               width: 48,
-              fit: BoxFit.cover,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.grey.shade300,
+                image: DecorationImage(
+                  image: NetworkImage(song.imageUrl),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             title: AppText.bodyMedium(
               song.title,
