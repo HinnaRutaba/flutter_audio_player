@@ -15,17 +15,17 @@ class _TrendingSongsSection extends StatelessWidget {
       ),
       gridItems: trendingSongs.map(
         (song) {
-          return AppListTile(
-            contentPadding: EdgeInsets.zero,
-            leading: AppImage.network(
+          return ListTile(
+            leading: Image.network(
               song.imageUrl,
               height: 48,
+              width: 48,
+              fit: BoxFit.cover,
             ),
             title: AppText.bodyMedium(
               song.title,
               fontWeight: FontWeight.bold,
             ),
-            onTap: () {},
           );
         },
       ).toList(),

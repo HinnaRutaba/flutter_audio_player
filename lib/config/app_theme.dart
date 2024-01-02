@@ -28,16 +28,17 @@ class AppTheme {
     // extensions: <ThemeExtension<dynamic>>[appListTileLight, appLabelLight],
   );
 
-  static final ThemeData darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
-      colorScheme: AppColors.appColorSchemeDark, textTheme: appTextThemeDark, a
-      // elevatedButtonTheme: appElevatedButtonThemeDark,
-      // filledButtonTheme: appFilledButtonThemeDark,
-      // textButtonTheme: appTextButtonThemeDark,
-      // outlinedButtonTheme: appOutlinedButtonThemeDark,
-      // iconButtonTheme: appIconButtonThemeDark,
-      // expansionTileTheme: appExpansionTileThemeDark,
-      // cardTheme: appCardThemeDark,
-      // sliderTheme: appSliderThemeDark,
-      // extensions: <ThemeExtension<dynamic>>[appListTileDark, appLabelDark],
-      );
+  static final ThemeData darkTheme =
+      ThemeData.dark(useMaterial3: true).copyWith(
+    colorScheme: AppColors.appColorSchemeDark, textTheme: appTextThemeDark,
+    // elevatedButtonTheme: appElevatedButtonThemeDark,
+    // filledButtonTheme: appFilledButtonThemeDark,
+    // textButtonTheme: appTextButtonThemeDark,
+    // outlinedButtonTheme: appOutlinedButtonThemeDark,
+    // iconButtonTheme: appIconButtonThemeDark,
+    // expansionTileTheme: appExpansionTileThemeDark,
+    // cardTheme: appCardThemeDark,
+    // sliderTheme: appSliderThemeDark,
+    // extensions: <ThemeExtension<dynamic>>[appListTileDark, appLabelDark],
+  );
 }
