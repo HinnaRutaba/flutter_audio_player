@@ -6,7 +6,6 @@ class _TrendingSongsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final trendingSongs = Song.songs.where((song) => song.isTrending).toList();
-    print("TTTTT_____${trendingSongs.length}");
     return AppGrid(
       title: AppText('Trending Now'),
       gridSettings: const AppGridSettings(
@@ -32,6 +31,7 @@ class _TrendingSongsSection extends StatelessWidget {
               song.title,
               fontWeight: FontWeight.bold,
             ),
+            onTap: () {},
           );
         },
       ).toList(),
