@@ -1,6 +1,10 @@
 import 'package:atomsbox/atomsbox.dart';
 import 'package:flutter/material.dart';
 
+import '../../../models/song.dart';
+
+part 'widgets/_trending_songs_section.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -29,7 +33,9 @@ class HomeView extends StatelessWidget {
           padding: const EdgeInsets.all(AppConstants.sm),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [],
+            children: const [
+              _TrendingSongsSection(),
+            ],
           ),
         ),
       ),
