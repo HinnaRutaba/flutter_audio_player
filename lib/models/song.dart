@@ -1,3 +1,5 @@
+import 'package:audio_service/audio_service.dart';
+
 import 'models.dart';
 
 class Song {
@@ -19,35 +21,35 @@ class Song {
     this.isTrending = true,
   }) : assert(songUrl != null || songPath != null);
 
-  // factory Song.fromMediaItem(MediaItem mediaItem) {
-  //   String? songPath, songUrl;
+  factory Song.fromMediaItem(MediaItem mediaItem) {
+    String? songPath, songUrl;
 
-  //   if ((mediaItem.extras!['url'] as String).startsWith('asset:///')) {
-  //     songPath =
-  //         mediaItem.extras!['url'].toString().replaceFirst('asset:///', '');
-  //   } else {
-  //     songUrl = mediaItem.extras!['url'];
-  //   }
+    if ((mediaItem.extras!['url'] as String).startsWith('asset:///')) {
+      songPath =
+          mediaItem.extras!['url'].toString().replaceFirst('asset:///', '');
+    } else {
+      songUrl = mediaItem.extras!['url'];
+    }
 
-  //   return Song(
-  //     id: mediaItem.id,
-  //     artist: Artist(id: '1', name: 'mediaItem.artist'),
-  //     title: mediaItem.title,
-  //     imageUrl: mediaItem.artUri!.toString(),
-  //     songPath: songPath,
-  //     songUrl: songUrl,
-  //   );
-  // }
+    return Song(
+      id: mediaItem.id,
+      artist: Artist(id: '1', name: 'mediaItem.artist'),
+      title: mediaItem.title,
+      imageUrl: mediaItem.artUri!.toString(),
+      songPath: songPath,
+      songUrl: songUrl,
+    );
+  }
 
-  // MediaItem toMediaItem() => MediaItem(
-  //       id: id,
-  //       artist: artist.id,
-  //       title: title,
-  //       artUri: Uri.parse(imageUrl),
-  //       extras: <String, dynamic>{
-  //         'url': songPath != null ? 'asset:///$songPath' : songUrl,
-  //       },
-  //     );
+  MediaItem toMediaItem() => MediaItem(
+        id: id,
+        artist: artist.id,
+        title: title,
+        artUri: Uri.parse(imageUrl),
+        extras: <String, dynamic>{
+          'url': songPath != null ? 'asset:///$songPath' : songUrl,
+        },
+      );
 
   static List<Song> songs = [
     Song(

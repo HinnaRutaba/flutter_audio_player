@@ -1,3 +1,4 @@
+import 'package:audio_handler/src/audio_handler.dart';
 import 'package:audio_player/ui/home/views/home_screen.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
@@ -9,10 +10,10 @@ void main() async {
   AudioHandler audioHandler = await AudioService.init(
     builder: () => MyAudioHandler(),
     config: const AudioServiceConfig(
-      androidNotificationChannelId: 'com.ryanheise.myapp.channel.audio',
-      androidNotificationChannelName: 'Audio playback',
-      androidNotificationOngoing: true,
-    ),
+        // androidNotificationChannelId: 'com.ryanheise.myapp.channel.audio',
+        // androidNotificationChannelName: 'Audio playback',
+        // androidNotificationOngoing: true,
+        ),
   );
   runApp(const MyApp());
 }

@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Vo6tpizCYf6dU5THydG9JU8qDNM=
+		4UDBIdexW0kY9jjfk8k39PgnHsI=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		nhih4JoiP/vOD0Z1LMwDhg4jpEc=
+		I6aiQELHz7uWG2VuThZe8Mcry34=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		+XOOR9xuiAZPwUW86aS/mI6tqCk=
+		bGVdHUeA8A7wiNzFXr+scfFiEV0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/songs/crystal_bloom__slowya_roll.mp3</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Ac7WwPZZ7F0VtWel3zKdEGndgxc=
+		/KAHTcA5yH5ibtAovR53Eg7RBBo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -119,6 +119,18 @@
 		<key>Frameworks/App.framework/flutter_assets/vm_snapshot_data</key>
 		<data>
 		+HsWKuOINTMijVvKruokFpzcml8=
+		</data>
+		<key>Frameworks/FMDB.framework/FMDB</key>
+		<data>
+		SHkSSXXQC66tUXqYyHN1LwIBX+c=
+		</data>
+		<key>Frameworks/FMDB.framework/Info.plist</key>
+		<data>
+		MaQV3Ir6RHGDb5RI7poYT2BzuW4=
+		</data>
+		<key>Frameworks/FMDB.framework/_CodeSignature/CodeResources</key>
+		<data>
+		mroosFttEHBniZia9GJhVTZk5cY=
 		</data>
 		<key>Frameworks/Flutter.framework/Flutter</key>
 		<data>
@@ -204,6 +216,42 @@
 		<data>
 		nMTZkkm9uooDDa8A2YJSyK73oP8=
 		</data>
+		<key>Frameworks/audio_service.framework/Info.plist</key>
+		<data>
+		yFZVMDkVd8rPMcmBPYf0uWbpoMo=
+		</data>
+		<key>Frameworks/audio_service.framework/_CodeSignature/CodeResources</key>
+		<data>
+		AYaIFO148I17NJ0a+KN/zAJ2U8s=
+		</data>
+		<key>Frameworks/audio_service.framework/audio_service</key>
+		<data>
+		XnmQUPYHad45fKQjzE4weo50upM=
+		</data>
+		<key>Frameworks/audio_session.framework/Info.plist</key>
+		<data>
+		xqqgHcgZai6kwt2KIUiUbkAmdEQ=
+		</data>
+		<key>Frameworks/audio_session.framework/_CodeSignature/CodeResources</key>
+		<data>
+		FoKWwHLgesFN0CMu6TTaHpYMr5w=
+		</data>
+		<key>Frameworks/audio_session.framework/audio_session</key>
+		<data>
+		wXDVo9Uhcbhrj+HrFJ4oUZwPZ5M=
+		</data>
+		<key>Frameworks/just_audio.framework/Info.plist</key>
+		<data>
+		h4Bqfp/um0WZw0ooYxuJB0a52oM=
+		</data>
+		<key>Frameworks/just_audio.framework/_CodeSignature/CodeResources</key>
+		<data>
+		TwRoBYUWXMxEidx1YvTChL7TJXA=
+		</data>
+		<key>Frameworks/just_audio.framework/just_audio</key>
+		<data>
+		KPEODgow1hNV7DUAFxOScJP9238=
+		</data>
 		<key>Frameworks/path_provider_foundation.framework/Info.plist</key>
 		<data>
 		iH+a9jM37NcL8kgDTAMtcJjr2eY=
@@ -216,9 +264,21 @@
 		<data>
 		YVZOkoQIRmXjOiYSLuLua2YK9/g=
 		</data>
+		<key>Frameworks/sqflite.framework/Info.plist</key>
+		<data>
+		FS3lg33McB8oI5JpYf9i7hQWAPA=
+		</data>
+		<key>Frameworks/sqflite.framework/_CodeSignature/CodeResources</key>
+		<data>
+		SLH5mye4e2CNQGNeeHuNCYaf/ko=
+		</data>
+		<key>Frameworks/sqflite.framework/sqflite</key>
+		<data>
+		RYKa52X03xiKxasaMNdG/5zryFI=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		2OoxxZabVVUQeifeCxwb49sx6F8=
+		saSKN5gev5CjKBtdtI0coWXHGd8=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -301,7 +361,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			C8d11UuSaztQPrU8dRpSyw2hmMs+ozCtY8YHzUzzZKY=
+			Z6yKqUBliJig1urkeQhpnNZsMVzJkXRYF3tdmE105HA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -315,7 +375,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XwQB1qwKw8He+W23nMiUx+aBLRamS7DXsV/0dvcW1pw=
+			wY/GFzuoWwykacXcIPCpXgGxevfhj7m+QrE2an1hSu8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -343,7 +403,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VZyVsweo8pEcqQTnMXGx57XijtZaZ4pjRjcqKDqruAQ=
+			4jLm2rXoe7JQvqc8kZ4byj9BA3/VZoDAMQRYBeK4Llw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/songs/crystal_bloom__slowya_roll.mp3</key>
@@ -406,7 +466,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h+k/vPCw7oZ7udzfbnh+qsW0FutjlaxCW3LnhCSdBT8=
+			C0ROX7GUxT30UMS4iKLZ49Y511lX50a1VVEb8QuI8yI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -428,6 +488,27 @@
 			<key>hash2</key>
 			<data>
 			XRpcsR0vWGkDzG+35GjjzaJtqN3CuV3azmWWPti/o3M=
+			</data>
+		</dict>
+		<key>Frameworks/FMDB.framework/FMDB</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kudZNvkts4l+nnGU6TAKHyJ16p3i4uEB5DmU/MxZLaQ=
+			</data>
+		</dict>
+		<key>Frameworks/FMDB.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+4gwrinStNv5513g8jvcXHUfzsAMOd1c+2km5pslfN0=
+			</data>
+		</dict>
+		<key>Frameworks/FMDB.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iR8nXgC5bOpO452QP93f6mqLTyhe5z/t5x5DbVOcjUE=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Flutter</key>
@@ -577,6 +658,69 @@
 			rETMw/Yb9jC7IPuAQ9hs/kyJldBrRgCEQA20XXBJezA=
 			</data>
 		</dict>
+		<key>Frameworks/audio_service.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			td8K3tpc44b6HpiUTnE8rBAlgxZOqndHknnTi8MbD0A=
+			</data>
+		</dict>
+		<key>Frameworks/audio_service.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			of1TwIAjHzDNAsLiMCeLYyLTqkasKlhCMzPrRDA8gR4=
+			</data>
+		</dict>
+		<key>Frameworks/audio_service.framework/audio_service</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JhF7DKYIMe7hG6S8UoJyM2ZJw4QXvJvmS8Yiy7Mn5M8=
+			</data>
+		</dict>
+		<key>Frameworks/audio_session.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1n0fV+khHUrSx5xCdlt6Dy0tIshY6E6zjMDB1QXH8rk=
+			</data>
+		</dict>
+		<key>Frameworks/audio_session.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OuN+MBcP4w7hQm/tU5PUUlH09JJuy6n4gZ2LwsgC+Xc=
+			</data>
+		</dict>
+		<key>Frameworks/audio_session.framework/audio_session</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			456Ya+7d4dk0U6YcgPxo/4/kvm4rxNj14udtkHwhYuQ=
+			</data>
+		</dict>
+		<key>Frameworks/just_audio.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1MYiGAwk8HJud0SF578HsygemhDAGAwt5HGBV4IVONo=
+			</data>
+		</dict>
+		<key>Frameworks/just_audio.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kiF859inn/0r4edkKO0R0AmvaMoiNqJhSqmlqcBbQiQ=
+			</data>
+		</dict>
+		<key>Frameworks/just_audio.framework/just_audio</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/6Nyd44ibPZmq/GmGbrk65ZFSAlQAQ8FWns3VHMdjL0=
+			</data>
+		</dict>
 		<key>Frameworks/path_provider_foundation.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -596,6 +740,27 @@
 			<key>hash2</key>
 			<data>
 			Y1WCGa+DazlLwDvztQqx/NKfi8b9oukPMhOmAx3E+aE=
+			</data>
+		</dict>
+		<key>Frameworks/sqflite.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			anrLihAY81WYVA41DUNLXzSTLA9ikEl0VRo9wAJTCa0=
+			</data>
+		</dict>
+		<key>Frameworks/sqflite.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mPMsAQMQU4ccCFnsA0JxbkfjXbMqTUVxW5ObNH6RzS4=
+			</data>
+		</dict>
+		<key>Frameworks/sqflite.framework/sqflite</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oTlbmEeTaoywH9SE1ycqRMdIBcy3uTtXtEnJ8suI/1A=
 			</data>
 		</dict>
 	</dict>

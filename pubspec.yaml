@@ -18,6 +18,7 @@ dependencies:
   audio_handler:
     path: packages/audio_handler
   audio_service: 0.18.12
+  rxdart: 0.27.7
 
 
 dev_dependencies:

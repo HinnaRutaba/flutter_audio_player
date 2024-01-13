@@ -86,4 +86,30 @@ class MyAudioHandler extends BaseAudioHandler {
       queue.add(items.toList());
     });
   }
+
+  @override
+  Future<void> removeQueueItemAt(int index) async {
+    if (_songQueue.length > index) {
+      _songQueue.removeAt(index);
+
+      final newQueue = queue.value..removeAt(index);
+      queue.add(newQueue);
+    }
+  }
+
+  @override
+  Future<void> addQueueItem(MediaItem mediaItem) async {
+    final audioSource = _createAudioSourced(mediaItem);
+    _songQueue.add(audioSource);
+
+    final newQueue = queue.value..add(mediaItem);
+    queue.add(newQueue);
+  }
+
+  UriAudioSource _createAudioSourced(MediaItem mediaItem) {
+    return AudioSource.uri(
+      Uri.parse(mediaItem.extras!['url']),
+      tag: mediaItem,
+    );
+  }
 }
