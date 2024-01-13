@@ -1,5 +1,7 @@
 import 'package:atomsbox/atomsbox.dart';
+import 'package:audio_player/repositories/song_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../models/song.dart';
 
