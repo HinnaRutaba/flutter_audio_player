@@ -55,12 +55,17 @@ class _SongDetailsState extends State<SongDetails> {
         leading: Align(
           //color: Colors.red,
           alignment: Alignment.center,
-          child: NeumorphicIcon(
-            Icons.arrow_circle_left,
-            style: NeumorphicStyle(
-              color: Theme.of(context).shadowColor,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: NeumorphicIcon(
+              Icons.arrow_circle_left,
+              style: NeumorphicStyle(
+                color: Theme.of(context).shadowColor,
+              ),
+              size: 40,
             ),
-            size: 40,
           ),
         ),
       ),
