@@ -6,58 +6,24 @@ class _TrendingSongsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final trendingSongs = Song.songs.where((song) => song.isTrending).toList();
-    return Container(
-      margin: const EdgeInsets.only(top: 40),
-      child: NeuBox(
-        child: Container(
-          width: 50,
-          height: 50,
-          color: Colors.red,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AppText.titleLarge('Trending Now'),
+        const SizedBox(height: 8),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          clipBehavior: Clip.none,
+          child: Row(
+            children: trendingSongs
+                .map((e) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SongIcon(song: e),
+                    ))
+                .toList(),
+          ),
         ),
-      ),
-      alignment: Alignment.center,
-    );
-    return Wrap(
-      spacing: 8,
-      runSpacing: 8,
-      children: trendingSongs.map((e) => SongIcon(song: e)).toList(),
-    );
-    return AppGrid(
-      title: AppText('Trending Now'),
-      gridSettings: const AppGridSettings(
-        crossAxisCount: 2,
-        childAspectRatio: 3.55,
-      ),
-      gridItems: trendingSongs.map(
-        (song) {
-          return ListTile(
-            leading: Container(
-              height: 48,
-              width: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.grey.shade300,
-                image: DecorationImage(
-                  image: NetworkImage(song.imageUrl),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            title: AppText.bodyMedium(
-              song.title,
-              fontWeight: FontWeight.bold,
-            ),
-            onTap: () {
-              try {
-                context.read<SongRepository>().setCurrentSong(song);
-                context.read<SongRepository>().play();
-              } catch (e, s) {
-                print("EEEEE_____${e}____$s");
-              }
-            },
-          );
-        },
-      ).toList(),
+      ],
     );
   }
 }
@@ -68,30 +34,33 @@ class SongIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Neumorphic(
-      padding: const EdgeInsets.all(12),
-      style: NeumorphicStyle(
-        shape: NeumorphicShape.convex,
-        boxShape: NeumorphicBoxShape.circle(),
-        depth: 0,
-        lightSource: LightSource.topLeft,
-        color: Colors.grey[200],
-        shadowDarkColor: Colors.grey.shade500,
-        shadowDarkColorEmboss: Colors.grey.shade500,
-        shadowLightColorEmboss: Colors.white,
-        shadowLightColor: Colors.white,
-      ),
-      child: Container(
-        height: 40,
-        width: 40,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          //color: Colors.grey.shade300,
-          image: DecorationImage(
-            image: NetworkImage(song.imageUrl),
-            fit: BoxFit.cover,
+    return InkWell(
+      onTap: () {
+        //Todo navigate to song details
+      },
+      child: Column(
+        children: [
+          NeuBox(
+            padding: const EdgeInsets.all(8),
+            radius: 50,
+            size: const Size(64, 64),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                //color: Colors.grey.shade300,
+                image: DecorationImage(
+                  image: NetworkImage(song.imageUrl),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
           ),
-        ),
+          const SizedBox(height: 12),
+          AppText.bodySmall(
+            song.title,
+            fontWeight: FontWeight.bold,
+          ),
+        ],
       ),
     );
   }
