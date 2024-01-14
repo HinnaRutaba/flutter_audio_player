@@ -40,10 +40,10 @@ class _SongTileState extends State<SongTile> {
     songRepository = context.watch<SongRepository>();
     return InkWell(
       onTap: () {
-        context.read<SongRepository>().navigateToSongDetails(
-              context,
-              widget.song,
-            );
+        songRepository.navigateToSongDetails(
+          context,
+          widget.song,
+        );
       },
       child: NeuBox(
         radius: widget.asStickyNotification ? 0 : 50,
