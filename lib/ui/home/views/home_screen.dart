@@ -1,8 +1,10 @@
 import 'package:atomsbox/atomsbox.dart';
+import 'package:audio_player/repositories/song_repository.dart';
 import 'package:audio_player/ui/custom/current_playing_song_wrapper.dart';
 import 'package:audio_player/ui/custom/neu_box.dart';
 import 'package:audio_player/ui/playlist_details/views/widgets/songs_list.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 import '../../../models/models.dart';

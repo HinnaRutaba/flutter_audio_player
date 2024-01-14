@@ -36,7 +36,7 @@ class _SongIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        //Todo navigate to song details
+        context.read<SongRepository>().navigateToSongDetails(context, song);
       },
       splashColor: Colors.black12,
       child: Column(

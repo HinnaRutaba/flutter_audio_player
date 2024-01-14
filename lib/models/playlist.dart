@@ -16,9 +16,9 @@ class Playlist {
   static List<Playlist> playLists = [
     Playlist(
       id: '1',
-      title: 'Crystal Bloom',
+      title: 'Rogo Rojo',
       imageUrl:
-          'https://images.unsplash.com/photo-1569521588854-9b461abc92ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+          'https://images.unsplash.com/photo-1541661538396-53ba2d051eed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80',
       songs: [
         Song(
           id: '1',
@@ -48,9 +48,9 @@ class Playlist {
     ),
     Playlist(
       id: '2',
-      title: 'Exits',
+      title: 'Marinate',
       imageUrl:
-          'https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+          'https://images.unsplash.com/photo-1598842377738-7aa01579d317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
       songs: [
         Song(
           id: '4',

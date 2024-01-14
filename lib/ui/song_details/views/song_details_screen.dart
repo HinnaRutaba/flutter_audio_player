@@ -51,21 +51,17 @@ class _SongDetailsState extends State<SongDetails> {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.song.title),
-        leading: Align(
-          //color: Colors.red,
-          alignment: Alignment.center,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: NeumorphicIcon(
-              Icons.arrow_circle_left,
-              style: NeumorphicStyle(
-                color: Theme.of(context).shadowColor,
-              ),
-              size: 40,
+        title: AppText.headlineSmall(widget.song.title),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: NeumorphicIcon(
+            Icons.arrow_circle_left,
+            style: NeumorphicStyle(
+              color: Theme.of(context).shadowColor,
             ),
+            size: 40,
           ),
         ),
       ),

@@ -38,7 +38,7 @@ class _SongTileState extends State<SongTile> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.read<SongRepository>().navigateTpSongDetails(
+        context.read<SongRepository>().navigateToSongDetails(
               context,
               widget.song,
             );
