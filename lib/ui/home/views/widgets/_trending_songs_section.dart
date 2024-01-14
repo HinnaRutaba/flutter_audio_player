@@ -10,14 +10,14 @@ class _TrendingSongsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AppText.titleLarge('Trending Now'),
-        const SizedBox(height: 8),
+        const SizedBox(height: AppConstants.sm),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           clipBehavior: Clip.none,
           child: Row(
             children: trendingSongs
                 .map((e) => Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(AppConstants.md),
                       child: SongIcon(song: e),
                     ))
                 .toList(),
@@ -41,7 +41,7 @@ class SongIcon extends StatelessWidget {
       child: Column(
         children: [
           NeuBox(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(AppConstants.sm),
             radius: 50,
             size: const Size(64, 64),
             child: Container(
@@ -55,7 +55,7 @@ class SongIcon extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: AppConstants.lg),
           AppText.bodySmall(
             song.title,
             fontWeight: FontWeight.bold,

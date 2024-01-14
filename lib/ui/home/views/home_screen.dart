@@ -25,12 +25,12 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: false,
         title: AppText.headlineSmall('Good evening!'),
-        titleSpacing: AppConstants.spaceUnit,
+        titleSpacing: AppConstants.md,
       ),
       body: SingleChildScrollView(
         clipBehavior: Clip.none,
         child: Padding(
-          padding: const EdgeInsets.all(AppConstants.spaceUnit),
+          padding: const EdgeInsets.all(AppConstants.md),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
