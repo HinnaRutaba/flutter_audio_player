@@ -33,4 +33,6 @@ class SongRepository {
     _audioHandler.removeQueueItemAt(0);
     _audioHandler.addQueueItem(song.toMediaItem());
   }
+
+  navigateTpSongDetails() {}
 }

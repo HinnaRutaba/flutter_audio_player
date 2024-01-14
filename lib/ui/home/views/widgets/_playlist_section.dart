@@ -49,7 +49,7 @@ class _PlaylistCard extends StatelessWidget {
       size: Size(size.width * 0.6, size.height * 0.3),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(AppConstants.borderRadius),
             topRight: Radius.circular(AppConstants.borderRadius),
           ),

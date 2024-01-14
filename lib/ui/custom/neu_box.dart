@@ -6,14 +6,16 @@ class NeuBox extends StatelessWidget {
   final Size? size;
   final double radius;
   final EdgeInsets padding;
-  final Color? border;
+  final Color border;
+  final Color backgroundColor;
   const NeuBox({
     super.key,
     required this.child,
     this.size,
     this.radius = 12,
     this.padding = const EdgeInsets.all(12),
-    this.border,
+    this.border = AppColors.containerColor,
+    this.backgroundColor = AppColors.containerColor,
   });
 
   @override
@@ -23,10 +25,10 @@ class NeuBox extends StatelessWidget {
       width: size?.width,
       height: size?.height,
       decoration: BoxDecoration(
-        color: AppColors.containerColor,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(radius),
         border: Border.all(
-          color: border ?? AppColors.containerColor,
+          color: border,
           width: 1,
         ),
         boxShadow: [

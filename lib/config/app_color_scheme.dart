@@ -26,10 +26,10 @@ class AppColors {
   static final appColorSchemeLight = schemeLight;
   static final appColorSchemeDark = schemeDark;
 
-  static Color backGroundColor = const Color(0xffC0DBEC);
-  static Color containerColor = const Color(0xffC9E2EE);
-  static Color shadowColor = const Color(0xff5182B5);
-  static Color mutedColor = const Color(0xff9BA9B5);
-  static Color darkColor = const Color(0xff4C6E81);
-  static Color accentColor = const Color(0xffFFB07C);
+  static const Color backGroundColor = Color(0xffC0DBEC);
+  static const Color containerColor = Color(0xffC9E2EE);
+  static const Color shadowColor = Color(0xff5182B5);
+  static const Color mutedColor = Color(0xff9BA9B5);
+  static const Color darkColor = Color(0xff4C6E81);
+  static const Color accentColor = Color(0xffFFB07C);
 }

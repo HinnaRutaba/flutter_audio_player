@@ -1,4 +1,5 @@
 import 'package:atomsbox/atomsbox.dart';
+import 'package:audio_player/ui/custom/current_playing_song_wrapper.dart';
 import 'package:audio_player/ui/custom/neu_box.dart';
 import 'package:audio_player/ui/playlist_details/views/widgets/songs_list.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -30,19 +31,21 @@ class HomeView extends StatelessWidget {
         title: AppText.headlineSmall('Good evening!'),
         titleSpacing: AppConstants.md,
       ),
-      body: SingleChildScrollView(
-        clipBehavior: Clip.none,
-        child: Padding(
-          padding: const EdgeInsets.all(AppConstants.md),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const _TrendingSongsSection(),
-              const SizedBox(height: AppConstants.lg),
-              const _PlaylistSection(),
-              const SizedBox(height: AppConstants.lg),
-              SongsList(songs: Song.songs),
-            ],
+      body: CurrentPlayingSongWrapper(
+        child: SingleChildScrollView(
+          clipBehavior: Clip.none,
+          child: Padding(
+            padding: const EdgeInsets.all(AppConstants.md),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const _TrendingSongsSection(),
+                const SizedBox(height: AppConstants.lg),
+                const _PlaylistSection(),
+                const SizedBox(height: AppConstants.lg),
+                SongsList(songs: Song.songs),
+              ],
+            ),
           ),
         ),
       ),
