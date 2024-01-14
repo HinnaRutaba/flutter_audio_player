@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 // import '../../molecules/app_expansion_tile.dart';
 // import '../../molecules/app_list_tile.dart';
@@ -17,6 +17,14 @@ class AppTheme {
   static final ThemeData theme = ThemeData.light(useMaterial3: true).copyWith(
     colorScheme: AppColors.appColorSchemeLight,
     textTheme: appTextThemeLight,
+    scaffoldBackgroundColor: AppColors.backGroundColor,
+    highlightColor: Colors.white,
+    shadowColor: AppColors.shadowColor,
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.backGroundColor,
+      foregroundColor: AppColors.darkColor,
+      elevation: 0,
+    ),
     // elevatedButtonTheme: appElevatedButtonThemeLight,
     // filledButtonTheme: appFilledButtonThemeLight,
     // textButtonTheme: appTextButtonThemeLight,

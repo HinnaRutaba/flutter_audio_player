@@ -1,7 +1,8 @@
 import 'package:atomsbox/atomsbox.dart';
 import 'package:audio_player/repositories/song_repository.dart';
-import 'package:flutter/material.dart';
+import 'package:audio_player/ui/custom/neu_box.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 import '../../../models/song.dart';
 
@@ -22,6 +23,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         centerTitle: false,
         title: AppText.headlineSmall('Good evening!'),

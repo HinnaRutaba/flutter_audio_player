@@ -6,6 +6,22 @@ class _TrendingSongsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final trendingSongs = Song.songs.where((song) => song.isTrending).toList();
+    return Container(
+      margin: const EdgeInsets.only(top: 40),
+      child: NeuBox(
+        child: Container(
+          width: 50,
+          height: 50,
+          color: Colors.red,
+        ),
+      ),
+      alignment: Alignment.center,
+    );
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: trendingSongs.map((e) => SongIcon(song: e)).toList(),
+    );
     return AppGrid(
       title: AppText('Trending Now'),
       gridSettings: const AppGridSettings(
@@ -46,51 +62,37 @@ class _TrendingSongsSection extends StatelessWidget {
   }
 }
 
-// class AppGrid extends StatelessWidget {
-//   const AppGrid({
-//     super.key,
-//     this.title,
-//     this.description,
-//     required this.gridItems,
-//     required this.gridSettings,
-//     this.height,
-//     this.physics = const NeverScrollableScrollPhysics(),
-//   });
+class SongIcon extends StatelessWidget {
+  final Song song;
+  const SongIcon({super.key, required this.song});
 
-//   final Widget? title;
-//   final Widget? description;
-//   final double? height;
-//   final ScrollPhysics? physics;
-//   final AppGridSettings gridSettings;
-//   final List<Widget> gridItems;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     SliverGridDelegateWithFixedCrossAxisCount gridDelegate;
-
-//     gridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
-//       crossAxisCount: gridSettings.crossAxisCount,
-//       mainAxisSpacing: gridSettings.mainAxisSpacing,
-//       crossAxisSpacing: gridSettings.crossAxisSpacing,
-//       childAspectRatio: gridSettings.childAspectRatio,
-//     );
-
-//     return Column(
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       children: [
-//         AppTextBlock(title: title, subtitle: description),
-//         SizedBox(
-//           height: height,
-//           child: GridView.builder(
-//             shrinkWrap: true,
-//             physics: physics,
-//             padding: EdgeInsets.zero,
-//             itemCount: gridItems.length,
-//             gridDelegate: gridDelegate,
-//             itemBuilder: (context, index) => gridItems[index],
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Neumorphic(
+      padding: const EdgeInsets.all(12),
+      style: NeumorphicStyle(
+        shape: NeumorphicShape.convex,
+        boxShape: NeumorphicBoxShape.circle(),
+        depth: 0,
+        lightSource: LightSource.topLeft,
+        color: Colors.grey[200],
+        shadowDarkColor: Colors.grey.shade500,
+        shadowDarkColorEmboss: Colors.grey.shade500,
+        shadowLightColorEmboss: Colors.white,
+        shadowLightColor: Colors.white,
+      ),
+      child: Container(
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          //color: Colors.grey.shade300,
+          image: DecorationImage(
+            image: NetworkImage(song.imageUrl),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+}

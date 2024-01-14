@@ -2,8 +2,8 @@ import 'package:audio_handler/src/audio_handler.dart';
 import 'package:audio_player/repositories/song_repository.dart';
 import 'package:audio_player/ui/home/views/home_screen.dart';
 import 'package:audio_service/audio_service.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 import 'config/app_theme.dart';
 
@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: AppTheme.darkTheme,
+        theme: AppTheme.theme,
+        themeMode: ThemeMode.light,
         home: const HomeScreen(),
       ),
     );

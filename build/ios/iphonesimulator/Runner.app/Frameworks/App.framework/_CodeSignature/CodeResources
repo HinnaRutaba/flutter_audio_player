@@ -10,19 +10,19 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		WnyZ46Nfut8ox4tN8ZtvKsIYMmw=
+		J2hQfNwAbx7M7tGjCINDqSVWyig=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		hcqVoM54iJk9SveUEkhWowxapDw=
+		zJ6GGBqjEKSGWIH0X5K+50poAt8=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
-		vKJkVIcw+LGHFnKJGwrQwCREv68=
+		c8ymLuM2rtp/pADY4zKKDrs6lUI=
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		jNrzSuMPDAFV0EQ2z9KYDBSWk4Y=
+		Aee0xuqd+BEKK6aXqf9/K1tLOCE=
 		</data>
 		<key>flutter_assets/assets/songs/crystal_bloom__slowya_roll.mp3</key>
 		<data>
@@ -58,11 +58,15 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		Kn4IgIEb+jstVQPZg4wYZ9j9iTs=
+		RX68xPOMdDykdYV04JElONI2lfQ=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		P7bb/oR3EhwqCIH1M6LyTuBIWYU=
+		</data>
+		<key>flutter_assets/packages/neumorphic_ui/fonts/NeumorphicIcons.ttf</key>
+		<data>
+		j/gyItxv7nJwy6iDn+JK3Ow2kW0=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -79,28 +83,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mW+i7Ol0FVUSgk3lE/2uXFet6YMxpwh55LWjQ/CpmLU=
+			S1pkoF8jPYWCC/IIULcYV8v9uce3blzdtxrTJQGE+Yw=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DVneKwgLPuE+K7FdQy3foesmMc1Gs48ugjciW2U8wPA=
+			2S2SF0ruMXVstIUaweUxuQDDbKGTFBzlYqjOA6YqUVE=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zX4DZFvESy3Ue3y2JvUcTsv1Whl6t3JBYotHrBZfviE=
+			lqNDwKEueW+TnLYkgVUgQHX4yP8a/JltvVF6GZEA1tg=
 			</data>
 		</dict>
 		<key>flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ntNrAcWp2sNgmqIXGei6ORRdu3HOyD2Q6iWliM2h8/k=
+			vkHaiQ+T9e7dfOt39PCc4pWl3Ak+9DtOTwgvGBbtUvw=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/songs/crystal_bloom__slowya_roll.mp3</key>
@@ -163,7 +167,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lywSEDqVWJ1nH7HFAhtJ2F/7YFxTmE2TDpKRrWLu15k=
+			/VOFGTz+VhVSJNTJPMQa62Se8aHpVug4p029UwLYNWY=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -171,6 +175,13 @@
 			<key>hash2</key>
 			<data>
 			x6NX+tjyECiQtyzbbjyY8U2zoZ7GDbJtE+T+k/dzgI0=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/neumorphic_ui/fonts/NeumorphicIcons.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dG5Zlm9qgmPN4N+NEhqJ6dvsSd44jCKx5vyp8oOPgwg=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>

@@ -7,9 +7,13 @@ class AppColors {
 
   static final ColorScheme schemeLight = SeedColorScheme.fromSeeds(
     brightness: Brightness.light,
-    primaryKey: primarySeedColor,
-    secondaryKey: secondarySeedColor,
     tones: FlexTones.vivid(Brightness.light),
+    primaryKey: backGroundColor,
+    primary: backGroundColor,
+    secondary: accentColor,
+    shadow: shadowColor,
+    background: backGroundColor,
+    primaryContainer: containerColor,
   );
 
   static final ColorScheme schemeDark = SeedColorScheme.fromSeeds(
@@ -21,4 +25,11 @@ class AppColors {
 
   static final appColorSchemeLight = schemeLight;
   static final appColorSchemeDark = schemeDark;
+
+  static Color backGroundColor = const Color(0xffC0DBEC);
+  static Color containerColor = const Color(0xffC9E2EE);
+  static Color shadowColor = const Color(0xff5182B5);
+  static Color mutedColor = const Color(0xff9BA9B5);
+  static Color darkColor = const Color(0xff4C6E81);
+  static Color accentColor = const Color(0xffFFB07C);
 }
