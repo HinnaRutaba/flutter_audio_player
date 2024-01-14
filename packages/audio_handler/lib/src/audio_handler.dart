@@ -112,4 +112,19 @@ class MyAudioHandler extends BaseAudioHandler {
       tag: mediaItem,
     );
   }
+
+  @override
+  Future<void> play() async {
+    _player.play();
+  }
+
+  @override
+  Future<void> pause() async {
+    _player.pause();
+  }
+
+  @override
+  Future<void> stop() async {
+    _player.stop();
+  }
 }

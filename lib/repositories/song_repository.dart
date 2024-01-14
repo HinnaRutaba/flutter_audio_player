@@ -16,6 +16,12 @@ class SongRepository {
 
   void pause() => _audioHandler.pause();
 
+  void stop() => _audioHandler.stop();
+
+  bool get isPlaying => _audioHandler.playbackState.value.playing;
+
+  List<MediaItem> get queue => _audioHandler.queue.value;
+
   Stream<MusicPlayerData> get musicPlayerDataStream => Rx.combineLatest4(
           _audioHandler.playbackState,
           _audioHandler.queue,
@@ -32,11 +38,14 @@ class SongRepository {
       });
 
   Future<void> setCurrentSong(Song song) async {
-    _audioHandler.removeQueueItemAt(0);
-    _audioHandler.addQueueItem(song.toMediaItem());
+    await Future.wait([
+      _audioHandler.removeQueueItemAt(0),
+      _audioHandler.addQueueItem(song.toMediaItem()),
+    ]);
   }
 
-  navigateToSongDetails(BuildContext context, Song song) {
+  navigateToSongDetails(BuildContext context, Song song) async {
+    await setCurrentSong(song);
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => SongDetails(song: song),

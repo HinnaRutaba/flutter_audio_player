@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:atomsbox/atomsbox.dart';
 import 'package:audio_player/config/app_color_scheme.dart';
 import 'package:audio_player/models/models.dart';
+import 'package:audio_player/repositories/song_repository.dart';
 import 'package:audio_player/ui/custom/neu_box.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 class SongDetails extends StatefulWidget {
@@ -17,11 +19,12 @@ class SongDetails extends StatefulWidget {
 class _SongDetailsState extends State<SongDetails> {
   final duration = const Duration(milliseconds: 1300);
   bool isPlaying = false;
-
   Timer? rotationTimer;
   double rotations = 0;
+  late SongRepository songRepository;
 
   play() {
+    songRepository.play();
     setState(() {
       isPlaying = true;
       rotations += 0.1;
@@ -34,6 +37,7 @@ class _SongDetailsState extends State<SongDetails> {
   }
 
   stop() {
+    songRepository.pause();
     setState(() {
       isPlaying = false;
     });
@@ -42,12 +46,22 @@ class _SongDetailsState extends State<SongDetails> {
 
   @override
   void dispose() {
+    songRepository.stop();
     rotationTimer?.cancel();
     super.dispose();
   }
 
   @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      play();
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    songRepository = context.watch<SongRepository>();
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
