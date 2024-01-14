@@ -19,9 +19,10 @@ class SongTile extends StatefulWidget {
 }
 
 class _SongTileState extends State<SongTile> {
-  bool isPlaying = false;
+  late SongRepository songRepository;
 
-  IconData get icon => isPlaying ? Icons.pause : Icons.play_arrow;
+  IconData get icon =>
+      songRepository.isPlaying ? Icons.pause : Icons.play_arrow;
   Color get textColor =>
       widget.asStickyNotification ? Colors.white : Colors.black;
 
@@ -36,6 +37,7 @@ class _SongTileState extends State<SongTile> {
 
   @override
   Widget build(BuildContext context) {
+    songRepository = context.watch<SongRepository>();
     return InkWell(
       onTap: () {
         context.read<SongRepository>().navigateToSongDetails(
@@ -77,10 +79,13 @@ class _SongTileState extends State<SongTile> {
             ),
             const SizedBox(width: AppConstants.md),
             InkWell(
-              onTap: () {
-                setState(() {
-                  isPlaying = !isPlaying;
-                });
+              onTap: () async {
+                if (songRepository.isPlaying) {
+                  songRepository.pause();
+                } else {
+                  await songRepository.setCurrentSong(widget.song);
+                  songRepository.play();
+                }
               },
               child: widget.asStickyNotification
                   ? Icon(

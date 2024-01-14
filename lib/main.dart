@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<SongRepository>(
-          create: (context) => SongRepository(audioHandler: _audioHandler),
+          create: (context) =>
+              SongRepository(false, audioHandler: _audioHandler),
         ),
       ],
       child: MaterialApp(

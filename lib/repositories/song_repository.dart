@@ -4,15 +4,24 @@ import 'package:audio_player/ui/playlist_details/views/playlist_details_screen.d
 import 'package:audio_player/ui/song_details/views/song_details_screen.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 
-class SongRepository {
-  SongRepository({required AudioHandler audioHandler})
+class SongRepository extends Cubit<bool> {
+  SongRepository(super.initialState, {required AudioHandler audioHandler})
       : _audioHandler = audioHandler;
 
   final AudioHandler _audioHandler;
 
-  void play() => _audioHandler.play();
+  _updateAndEmit() {
+    final state = _audioHandler.playbackState.value.playing;
+    emit(state);
+  }
+
+  void play() {
+    _audioHandler.play();
+    _updateAndEmit();
+  }
 
   void pause() => _audioHandler.pause();
 
