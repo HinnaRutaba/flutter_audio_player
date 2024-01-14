@@ -1,4 +1,5 @@
 import 'package:atomsbox/atomsbox.dart';
+import 'package:audio_player/config/app_color_scheme.dart';
 import 'package:audio_player/models/models.dart';
 import 'package:audio_player/ui/custom/neu_box.dart';
 import 'package:neumorphic_ui/neumorphic_ui.dart';
@@ -12,8 +13,11 @@ class SongDetails extends StatefulWidget {
 }
 
 class _SongDetailsState extends State<SongDetails> {
+  bool isPlaying = false;
+
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.song.title),
@@ -37,62 +41,71 @@ class _SongDetailsState extends State<SongDetails> {
               const Spacer(),
               NeuBox(
                 radius: 50,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Image.network(
-                    widget.song.imageUrl,
-                    fit: BoxFit.cover,
+                shape: BoxShape.circle,
+                child: Container(
+                  width: size.width * 0.60,
+                  height: size.width * 0.60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage(widget.song.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(height: AppConstants.lg),
+              const SizedBox(height: 32),
               AppText.titleLarge("Now Playing ${widget.song.title}"),
               AppText.bodyMedium("By ${widget.song.artist.name}"),
-              const SizedBox(height: AppConstants.lg),
               const Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  NeuBox(
-                    padding: const EdgeInsets.all(AppConstants.md),
-                    radius: 50,
-                    child: NeumorphicIcon(
-                      Icons.skip_previous,
-                      size: 40,
-                      style: NeumorphicStyle(
-                        color: Theme.of(context).shadowColor,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: AppConstants.lg),
-                  NeuBox(
-                    padding: const EdgeInsets.all(AppConstants.md),
-                    radius: 50,
-                    child: NeumorphicIcon(
-                      Icons.play_arrow,
-                      size: 40,
-                      style: NeumorphicStyle(
-                        color: Theme.of(context).shadowColor,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: AppConstants.lg),
-                  NeuBox(
-                    padding: const EdgeInsets.all(AppConstants.md),
-                    radius: 50,
-                    child: NeumorphicIcon(
-                      Icons.skip_next,
-                      size: 40,
-                      style: NeumorphicStyle(
-                        color: Theme.of(context).shadowColor,
-                      ),
-                    ),
-                  ),
-                ],
+              const NeumorphicProgress(
+                percent: 12,
+                height: 16,
+                style: ProgressStyle(
+                  variant: AppColors.shadowColor,
+                  accent: AppColors.containerColor,
+                ),
               ),
+              const SizedBox(height: AppConstants.lg * 2),
+              buttonsTray(),
               const Spacer(),
             ],
           )),
+    );
+  }
+
+  Widget buttonsTray() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        iconButton(Icons.skip_previous, () {}),
+        const SizedBox(width: AppConstants.lg),
+        iconButton(
+            isPlaying ? Icons.pause : Icons.play_arrow, () {
+          setState(() {
+            isPlaying = !isPlaying;
+          });
+        }),
+        const SizedBox(width: AppConstants.lg),
+        iconButton(Icons.skip_next, () {}),
+      ],
+    );
+  }
+
+  Widget iconButton(IconData icon, void Function() onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: NeuBox(
+        padding: const EdgeInsets.all(AppConstants.md),
+        radius: 50,
+        child: NeumorphicIcon(
+          icon,
+          size: 40,
+          style: NeumorphicStyle(
+            color: Theme.of(context).shadowColor,
+          ),
+        ),
+      ),
     );
   }
 }
