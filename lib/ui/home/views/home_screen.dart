@@ -1,7 +1,5 @@
 import 'package:atomsbox/atomsbox.dart';
-import 'package:audio_player/repositories/song_repository.dart';
 import 'package:audio_player/ui/custom/neu_box.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 import '../../../models/song.dart';
@@ -27,14 +25,12 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: false,
         title: AppText.headlineSmall('Good evening!'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+        titleSpacing: AppConstants.spaceUnit,
       ),
       body: SingleChildScrollView(
+        clipBehavior: Clip.none,
         child: Padding(
-          padding: const EdgeInsets.all(AppConstants.sm),
+          padding: const EdgeInsets.all(AppConstants.spaceUnit),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
