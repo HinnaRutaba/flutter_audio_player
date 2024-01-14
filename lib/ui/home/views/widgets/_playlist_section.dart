@@ -5,25 +5,72 @@ class _PlaylistSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final trendingSongs = Song.songs.where((song) => song.isTrending).toList();
+    final playlist = Playlist.playLists;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppText.titleLarge('Trending Now'),
+        AppText.titleLarge('Your Playlists'),
         const SizedBox(height: AppConstants.sm),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          clipBehavior: Clip.none,
-          child: Row(
-            children: trendingSongs
-                .map((e) => Padding(
-                      padding: const EdgeInsets.all(AppConstants.md),
-                      child: SongIcon(song: e),
-                    ))
-                .toList(),
+        CarouselSlider(
+          options: CarouselOptions(
+            autoPlay: true,
+            clipBehavior: Clip.none,
+            enlargeCenterPage: true,
+            aspectRatio: 16 / 12,
+            viewportFraction: 0.6,
+            pauseAutoPlayOnTouch: true,
           ),
+          items: playlist.map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Padding(
+                  padding: const EdgeInsets.all(AppConstants.md),
+                  child: _PlaylistCard(playlist: i),
+                );
+              },
+            );
+          }).toList(),
         ),
       ],
+    );
+  }
+}
+
+class _PlaylistCard extends StatelessWidget {
+  final Playlist playlist;
+  const _PlaylistCard({super.key, required this.playlist});
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return NeuBox(
+      padding: const EdgeInsets.all(AppConstants.sm),
+      radius: AppConstants.borderRadius,
+      size: Size(size.width * 0.6, size.height * 0.3),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(AppConstants.borderRadius),
+            topRight: Radius.circular(AppConstants.borderRadius),
+          ),
+          //color: Colors.grey.shade300,
+          image: DecorationImage(
+            image: NetworkImage(playlist.imageUrl),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(AppConstants.md),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppText.headlineSmall(playlist.title),
+              AppText.bodyMedium('${playlist.songs.length} songs')
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:atomsbox/atomsbox.dart';
 import 'package:audio_player/ui/custom/neu_box.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:neumorphic_ui/neumorphic_ui.dart';
 
-import '../../../models/song.dart';
+import '../../../models/models.dart';
 
 part 'widgets/_playlist_section.dart';
 part 'widgets/_trending_songs_section.dart';
@@ -36,6 +37,8 @@ class HomeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _TrendingSongsSection(),
+              const SizedBox(height: AppConstants.lg),
+              _PlaylistSection(),
             ],
           ),
         ),

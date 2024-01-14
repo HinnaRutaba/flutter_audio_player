@@ -18,7 +18,7 @@ class _TrendingSongsSection extends StatelessWidget {
             children: trendingSongs
                 .map((e) => Padding(
                       padding: const EdgeInsets.all(AppConstants.md),
-                      child: SongIcon(song: e),
+                      child: _SongIcon(song: e),
                     ))
                 .toList(),
           ),
@@ -28,9 +28,9 @@ class _TrendingSongsSection extends StatelessWidget {
   }
 }
 
-class SongIcon extends StatelessWidget {
+class _SongIcon extends StatelessWidget {
   final Song song;
-  const SongIcon({super.key, required this.song});
+  const _SongIcon({super.key, required this.song});
 
   @override
   Widget build(BuildContext context) {
