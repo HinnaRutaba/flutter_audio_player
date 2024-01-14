@@ -4,6 +4,7 @@ import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 import '../../../models/song.dart';
 
+part 'widgets/_playlist_section.dart';
 part 'widgets/_trending_songs_section.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,13 +28,13 @@ class HomeView extends StatelessWidget {
         title: AppText.headlineSmall('Good evening!'),
         titleSpacing: AppConstants.md,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         clipBehavior: Clip.none,
         child: Padding(
-          padding: const EdgeInsets.all(AppConstants.md),
+          padding: EdgeInsets.all(AppConstants.md),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               _TrendingSongsSection(),
             ],
           ),

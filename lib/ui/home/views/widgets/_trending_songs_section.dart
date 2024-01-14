@@ -38,6 +38,7 @@ class SongIcon extends StatelessWidget {
       onTap: () {
         //Todo navigate to song details
       },
+      splashColor: Colors.black12,
       child: Column(
         children: [
           NeuBox(
