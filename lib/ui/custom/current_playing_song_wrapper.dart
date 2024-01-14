@@ -12,7 +12,7 @@ class CurrentPlayingSongWrapper extends StatefulWidget {
 }
 
 class _CurrentPlayingSongWrapperState extends State<CurrentPlayingSongWrapper> {
-  bool isPlaying = true;
+  bool isPlaying = false;
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -1,5 +1,7 @@
 import 'package:audio_player/models/music_player_data.dart';
+import 'package:audio_player/ui/song_details/views/song_details_screen.dart';
 import 'package:audio_service/audio_service.dart';
+import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../models/song.dart';
@@ -34,5 +36,11 @@ class SongRepository {
     _audioHandler.addQueueItem(song.toMediaItem());
   }
 
-  navigateTpSongDetails() {}
+  navigateTpSongDetails(BuildContext context, Song song) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => SongDetails(song: song),
+      ),
+    );
+  }
 }

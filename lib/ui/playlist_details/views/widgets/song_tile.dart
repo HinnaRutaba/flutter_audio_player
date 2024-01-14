@@ -1,6 +1,8 @@
 import 'package:atomsbox/atomsbox.dart';
 import 'package:audio_player/config/app_color_scheme.dart';
+import 'package:audio_player/repositories/song_repository.dart';
 import 'package:audio_player/ui/custom/neu_box.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 import '../../../../models/song.dart';
@@ -34,60 +36,68 @@ class _SongTileState extends State<SongTile> {
 
   @override
   Widget build(BuildContext context) {
-    return NeuBox(
-      radius: widget.asStickyNotification ? 0 : 50,
-      padding: EdgeInsets.all(
-          widget.asStickyNotification ? AppConstants.lg : AppConstants.md),
-      backgroundColor: widget.asStickyNotification
-          ? Theme.of(context).primaryColor
-          : AppColors.containerColor,
-      child: Row(
-        children: [
-          widget.asStickyNotification
-              ? songIcon
-              : NeuBox(
-                  radius: 50,
-                  padding: const EdgeInsets.all(0),
-                  child: songIcon,
-                ),
-          const SizedBox(width: AppConstants.lg),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppText.titleMedium(
-                  widget.song.title,
-                  color: textColor,
-                ),
-                AppText.bodySmall(
-                  widget.song.artist.name,
-                  color: textColor,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: AppConstants.md),
-          InkWell(
-            onTap: () {
-              setState(() {
-                isPlaying = !isPlaying;
-              });
-            },
-            child: widget.asStickyNotification
-                ? Icon(
-                    icon,
-                    color: Theme.of(context).colorScheme.primaryContainer,
-                    size: 40,
-                  )
-                : NeumorphicIcon(
-                    icon,
-                    style: NeumorphicStyle(
-                      color: Theme.of(context).shadowColor,
-                    ),
-                    size: 40,
+    return InkWell(
+      onTap: () {
+        context.read<SongRepository>().navigateTpSongDetails(
+              context,
+              widget.song,
+            );
+      },
+      child: NeuBox(
+        radius: widget.asStickyNotification ? 0 : 50,
+        padding: EdgeInsets.all(
+            widget.asStickyNotification ? AppConstants.lg : AppConstants.md),
+        backgroundColor: widget.asStickyNotification
+            ? Theme.of(context).primaryColor
+            : AppColors.containerColor,
+        child: Row(
+          children: [
+            widget.asStickyNotification
+                ? songIcon
+                : NeuBox(
+                    radius: 50,
+                    padding: const EdgeInsets.all(0),
+                    child: songIcon,
                   ),
-          ),
-        ],
+            const SizedBox(width: AppConstants.lg),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppText.titleMedium(
+                    widget.song.title,
+                    color: textColor,
+                  ),
+                  AppText.bodySmall(
+                    widget.song.artist.name,
+                    color: textColor,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: AppConstants.md),
+            InkWell(
+              onTap: () {
+                setState(() {
+                  isPlaying = !isPlaying;
+                });
+              },
+              child: widget.asStickyNotification
+                  ? Icon(
+                      icon,
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                      size: 40,
+                    )
+                  : NeumorphicIcon(
+                      icon,
+                      style: NeumorphicStyle(
+                        color: Theme.of(context).shadowColor,
+                      ),
+                      size: 40,
+                    ),
+            ),
+          ],
+        ),
       ),
     );
   }
