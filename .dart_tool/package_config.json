@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animated_rotation",
+      "rootUri": "file:///Users/hinnarutaba/.pub-cache/hosted/pub.dev/animated_rotation-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "async",
       "rootUri": "file:///Users/hinnarutaba/.pub-cache/hosted/pub.dev/async-2.11.0",
       "packageUri": "lib/",
@@ -410,7 +416,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-01-14T15:27:09.492116Z",
+  "generated": "2024-01-14T19:17:49.767914Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }

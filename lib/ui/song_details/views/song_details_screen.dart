@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:atomsbox/atomsbox.dart';
 import 'package:audio_player/config/app_color_scheme.dart';
 import 'package:audio_player/models/models.dart';
@@ -13,7 +15,36 @@ class SongDetails extends StatefulWidget {
 }
 
 class _SongDetailsState extends State<SongDetails> {
+  final duration = const Duration(milliseconds: 1300);
   bool isPlaying = false;
+
+  Timer? rotationTimer;
+  double rotations = 0;
+
+  play() {
+    setState(() {
+      isPlaying = true;
+      rotations += 0.1;
+    });
+    rotationTimer = Timer.periodic(duration, (timer) {
+      setState(() {
+        rotations += 0.1;
+      });
+    });
+  }
+
+  stop() {
+    setState(() {
+      isPlaying = false;
+    });
+    rotationTimer?.cancel();
+  }
+
+  @override
+  void dispose() {
+    rotationTimer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +65,17 @@ class _SongDetailsState extends State<SongDetails> {
         ),
       ),
       body: Container(
-          height: MediaQuery.of(context).size.height,
-          padding: const EdgeInsets.all(40),
-          child: Column(
-            children: [
-              const Spacer(),
-              NeuBox(
-                radius: 50,
-                shape: BoxShape.circle,
+        height: MediaQuery.of(context).size.height,
+        padding: const EdgeInsets.all(40),
+        child: Column(
+          children: [
+            const Spacer(),
+            NeuBox(
+              radius: 50,
+              shape: BoxShape.circle,
+              child: AnimatedRotation(
+                duration: duration,
+                turns: rotations,
                 child: Container(
                   width: size.width * 0.60,
                   height: size.width * 0.60,
@@ -54,23 +88,25 @@ class _SongDetailsState extends State<SongDetails> {
                   ),
                 ),
               ),
-              const SizedBox(height: 32),
-              AppText.titleLarge("Now Playing ${widget.song.title}"),
-              AppText.bodyMedium("By ${widget.song.artist.name}"),
-              const Spacer(),
-              const NeumorphicProgress(
-                percent: 12,
-                height: 16,
-                style: ProgressStyle(
-                  variant: AppColors.shadowColor,
-                  accent: AppColors.containerColor,
-                ),
+            ),
+            const SizedBox(height: 32),
+            AppText.titleLarge("Now Playing ${widget.song.title}"),
+            AppText.bodyMedium("By ${widget.song.artist.name}"),
+            const Spacer(),
+            const NeumorphicProgress(
+              percent: 12,
+              height: 16,
+              style: ProgressStyle(
+                variant: AppColors.shadowColor,
+                accent: AppColors.containerColor,
               ),
-              const SizedBox(height: AppConstants.lg * 2),
-              buttonsTray(),
-              const Spacer(),
-            ],
-          )),
+            ),
+            const SizedBox(height: AppConstants.lg * 2),
+            buttonsTray(),
+            const Spacer(),
+          ],
+        ),
+      ),
     );
   }
 
@@ -80,11 +116,12 @@ class _SongDetailsState extends State<SongDetails> {
       children: [
         iconButton(Icons.skip_previous, () {}),
         const SizedBox(width: AppConstants.lg),
-        iconButton(
-            isPlaying ? Icons.pause : Icons.play_arrow, () {
-          setState(() {
-            isPlaying = !isPlaying;
-          });
+        iconButton(isPlaying ? Icons.pause : Icons.play_arrow, () {
+          if (isPlaying) {
+            stop();
+          } else {
+            play();
+          }
         }),
         const SizedBox(width: AppConstants.lg),
         iconButton(Icons.skip_next, () {}),
