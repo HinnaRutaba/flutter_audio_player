@@ -16,7 +16,7 @@ class _PlaylistSection extends StatelessWidget {
             autoPlay: true,
             clipBehavior: Clip.none,
             enlargeCenterPage: true,
-            aspectRatio: 16 / 12,
+            aspectRatio: 16 / 14,
             viewportFraction: 0.6,
             pauseAutoPlayOnTouch: true,
           ),
@@ -54,28 +54,31 @@ class _PlaylistCard extends StatelessWidget {
         padding: const EdgeInsets.all(AppConstants.sm),
         radius: AppConstants.borderRadius,
         size: Size(size.width * 0.6, size.height * 0.3),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(AppConstants.borderRadius),
-              topRight: Radius.circular(AppConstants.borderRadius),
-            ),
-            //color: Colors.grey.shade300,
-            image: DecorationImage(
-              image: NetworkImage(playlist.imageUrl),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(AppConstants.md),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppText.headlineSmall(playlist.title),
-                AppText.bodyMedium('${playlist.songs.length} songs')
-              ],
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(AppConstants.md),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(AppConstants.borderRadius),
+                      topRight: Radius.circular(AppConstants.borderRadius),
+                    ),
+                    //color: Colors.grey.shade300,
+                    image: DecorationImage(
+                      image: NetworkImage(playlist.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: AppConstants.md),
+              AppText.headlineSmall(playlist.title),
+              AppText.bodyMedium('${playlist.songs.length} songs')
+            ],
           ),
         ),
       ),
