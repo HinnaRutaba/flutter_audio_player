@@ -26,9 +26,16 @@ class SongsList extends StatelessWidget {
   }
 }
 
-class _SongTile extends StatelessWidget {
+class _SongTile extends StatefulWidget {
   final Song song;
   const _SongTile({super.key, required this.song});
+
+  @override
+  State<_SongTile> createState() => _SongTileState();
+}
+
+class _SongTileState extends State<_SongTile> {
+  bool isPlaying = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +51,7 @@ class _SongTile extends StatelessWidget {
               height: 40,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
-                child: Image.network(song.imageUrl, fit: BoxFit.cover),
+                child: Image.network(widget.song.imageUrl, fit: BoxFit.cover),
               ),
             ),
           ),
@@ -53,18 +60,25 @@ class _SongTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppText.titleMedium(song.title),
-                AppText.bodySmall(song.artist.name),
+                AppText.titleMedium(widget.song.title),
+                AppText.bodySmall(widget.song.artist.name),
               ],
             ),
           ),
           const SizedBox(width: AppConstants.md),
-          NeumorphicIcon(
-            Icons.play_arrow,
-            style: NeumorphicStyle(
-              color: Theme.of(context).shadowColor,
+          InkWell(
+            onTap: () {
+              setState(() {
+                isPlaying = !isPlaying;
+              });
+            },
+            child: NeumorphicIcon(
+              isPlaying ? Icons.pause : Icons.play_arrow,
+              style: NeumorphicStyle(
+                color: Theme.of(context).shadowColor,
+              ),
+              size: 40,
             ),
-            size: 40,
           ),
         ],
       ),
